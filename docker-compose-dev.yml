@@ -1,0 +1,9 @@
+version: '3'
+services:
+  node-app: 
+    build: 
+      target: development
+    volumes:
+      - ./:/node-app:ro
+    environment:
+      - NODE_ENV=development

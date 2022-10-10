@@ -1,0 +1,7 @@
+version: '3'
+services:
+  node-app: 
+    build: 
+      target: production
+    environment:
+      - NODE_ENV=production
