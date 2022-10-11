@@ -9,8 +9,16 @@ pipeline {
         stage('Build') { 
             steps {
                 sh 'npm install' 
-                sh 'docker version'
             }
         }
+
+        stage("verify tooling") {
+            steps {
+                sh '''
+                docker version
+                docker info
+                docker compose version 
+                '''
+            }
     }
 }
