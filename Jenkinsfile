@@ -1,9 +1,15 @@
 pipeline {
-    agent any
+    agent {
+        docker {
+            image 'node:lts-bullseye-slim' 
+            args '-p 3001:3000' 
+        }
+    }
     stages {
         stage('Build') { 
             steps {
-                sh 'docker compose version' 
+                sh 'npm install' 
+                sh 'curl version' 
                 sh 'docker version' 
             }
         }
