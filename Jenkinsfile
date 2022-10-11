@@ -6,6 +6,12 @@ pipeline {
         }
     }
     stages {
+        stage('docker-compose up') {
+          steps {
+            sh 'docker-compose -f docker-compose.yml -f docker-compose-prod.yml up -d --build'
+          }
+        }
+        
         stage('Build') { 
             steps {
                 sh 'npm install' 
