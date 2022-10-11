@@ -8,9 +8,10 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
-                sh 'docker compose -f docker-compose.yml -f docker-compose-prod.yml up -d --build'
+                sh 'docker version'
+                sh 'docker compose version'
                 sh 'npm install' 
-                sh 'npm start' 
+                // sh 'npm start' 
             }
         }
     }
