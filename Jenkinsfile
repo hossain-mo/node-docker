@@ -7,7 +7,7 @@ pipeline {
             }
         }
         stage('test') { 
-            steps {
+            steps ('DockerComposeBuilder'){
                 sh 'docker-compose -f docker-compose.yml -f docker-compose-prod.yml up -d' 
                 sh 'npm start' 
             }
