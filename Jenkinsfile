@@ -1,14 +1,14 @@
 pipeline {
-    agent any
+    agent { dockerfile true }
 
     environment {
-        NODE_ENV = 'production'
+    NODE_ENV = 'production'
     }
     stages {
         stage('Build') { 
             steps {
-                sh 'docker-compose -f docker-compose.yml -f docker-compose-prod.yml up -d --build' 
-                sh 'docker-compose version' 
+                sh 'npm install' 
+                sh 'docker version' 
             }
         }
     }
