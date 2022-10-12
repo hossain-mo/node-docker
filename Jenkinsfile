@@ -1,9 +1,13 @@
 pipeline {
-    agent { dockerfile true }
+    agent any
+
+    environment {
+        NODE_ENV = 'production'
+    }
     stages {
         stage('Build') { 
             steps {
-                sh 'npm install' 
+                sh 'docker version' 
             }
         }
     }
