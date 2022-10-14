@@ -1,11 +1,13 @@
 pipeline {
-    agent any
+    agent {
+        dockerfile true 
+    }
 
     stages {
         stage('Build') { 
             steps {
-                //sh 'npm install' 
-                sh 'docker-compose up -d --build' 
+                sh 'npm install' 
+                sh 'npm run lint' 
             }
         }
     }
