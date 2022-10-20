@@ -1,6 +1,8 @@
 pipeline {
     agent {
-        dockerfile true 
+        dockerfile {
+        filename 'docker-compose-prod.yml'
+        } 
     }
 
     stages {
