@@ -18,7 +18,6 @@ mongoose
 .then(() => console.log("connected to db..."))
 .catch(() => console.log("faild to connect to db..."));
 
-
 //redis connection
 redisClient.on('error', (err) => console.log('Redis Client Error', err));
 redisClient.on('connect', () => console.log('Redis connect'));
